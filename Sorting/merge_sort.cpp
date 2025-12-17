@@ -29,7 +29,7 @@ void merge(vector<int> &arr,int low,int mid, int high){
     }
 
 
-void merge_sort(vector<int> &arr,int low,int high){
+void merge_sort(vector<int> &arr,int low,int high ){
     if(low>=high) return;
     int mid=(low+high)/2;
     merge_sort(arr,low,mid);
@@ -38,7 +38,7 @@ void merge_sort(vector<int> &arr,int low,int high){
 
 }
 int main(){
-    vector<int> arr={3,1,2,4,1,5,2,6,4};
+    vector<int> arr={3,1,2,4,1,5,2,6,4,8};
     int n=arr.size();
     merge_sort(arr,0,n-1);
     for(int val:arr){
