@@ -14,7 +14,5 @@ int main(){
         cin>>c;
         cout<<hash[c]<<endl;
     }
-     
-
     return 0;
 }
