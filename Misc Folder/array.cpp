@@ -2,7 +2,7 @@
  using namespace std;
  int main(){
     vector<int>arr={1,2,3,1,1,1,1,3,3};
-    int k=6,len=0;
+    int k=3,len=0;
     int i=0,j=0,sum=arr[i];
     while(j<arr.size()){
         while(i<=j && sum>k){
