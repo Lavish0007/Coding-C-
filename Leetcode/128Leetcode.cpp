@@ -1,4 +1,4 @@
-//128. Longest Consecutive Sequence
+//128. Longest Consecutive Sequence optimal solution
 
 
 #include<bits/stdc++.h>
