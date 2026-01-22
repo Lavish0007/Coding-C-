@@ -23,12 +23,16 @@ vector<int>spiral(vector<vector<int>>& matrix){
                 ans.push_back(matrix[rowend][i]);
             }     
             rowend--;
-            
+        }
+        
+        if(colstart<=colend){
             //up
+        
             for(int i=rowend;i>=rowstart;i--){
                 ans.push_back(matrix[i][colstart]);
             }     
             colstart++;
+           
         }
 
     }
