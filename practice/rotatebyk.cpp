@@ -14,8 +14,11 @@ int main(){
         ans[i]=v[a];
         a++;
     }
-    for(int val:ans){
+    for(int val:v){
         cout<<val<<" ";
     }
+    // reverse(v.begin(),v.begin()+k);
+    // reverse(v.begin()+k,v.end());
+    // reverse(v.begin(),v.end());
     return 0;
 }
