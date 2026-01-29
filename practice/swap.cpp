@@ -17,6 +17,6 @@ int main(){
     for(int val:v){
         cout<<val<<" ";
     }
-
+    
     return 0;
 }
