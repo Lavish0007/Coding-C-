@@ -1,16 +1,26 @@
 #include<bits/stdc++.h>
 using namespace std;
-int main(){
-    vector<int>arr={1,2,3,4,5,6,7}; 
+int summ(vector<int>&arr,int t){
     unordered_map<int,int>mp;
-    int t=7;
-    for(auto it:arr){
-        if(mp.find(t-it)!=mp.end()){
-            cout<<"yes"<<endl;
-            return 0;
+    int sm=0;
+    for(int i=0;i<arr.size();i++){
+        int need = t-arr[i];
+        if(mp.find(need)!=mp.end()){
+            sm = i + mp[need];
         }
-        mp[it]++;
+        mp[arr[i]]=i;
     }
-    cout<<"no"<<endl;
+    return sm;
+}
+
+int main(){
+    int n,t;
+    cin>>n>>t;
+    vector<int>arr(n);
+    for(int i=0;i<n;i++){
+        cin>>arr[i];
+    }
+    int res=summ(arr,t);
+    cout<<res;
     return 0;
 }
