@@ -2,10 +2,14 @@
 using namespace std;
 int main(){
     unordered_map<char,int>mp; 
-    mp.insert({'a',1});
-    mp.insert({'A',1});
-    for(auto it:mp){
-        cout<<it.first-32<<" ";
+    string s="aAabB";
+    for(int i=0;i<s.size();i++){
+        mp[s[i]]=i;
     }
+    for(auto it:mp) {
+        cout<<it.first<<" "<<it.second<<endl;
+    }
+    
+    
     return 0;
 }
