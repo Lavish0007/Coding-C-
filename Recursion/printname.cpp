@@ -1,13 +1,14 @@
 #include<bits/stdc++.h>
 using namespace std;
-void print(string n,int cn){
-    if(cn==5) return;
-
-    cout<<n<<"  "<<cn<<endl;
-    print(n,cn+1);
+void print(int n, int cn){
+    if(cn==0) return;
+    cout<<n<<" "<<cn<<endl;
+    n++; cn--; // learnt about post and pre incremental 
+    print(n,cn);
+    
 }
 int main(){
-     print("Lavish",0);
+     print(1,5);
 
     return 0;
 }
