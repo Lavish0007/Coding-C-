@@ -8,7 +8,6 @@ void print(int n, int cn){
     
 }
 int main(){
-     print(1,5);
-
+    print(1,5);
     return 0;
 }
