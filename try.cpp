@@ -8,9 +8,9 @@ bool isp(string s){
 }
 int main() {
     int freq[26]={0};
-    // for(int i=0;i<26;i++){
-    //     cout<<freq[i]<<" ";
-    // }
-    cout<<"abc"-"a";
+    for(int i=0;i<26;i++){
+        cout<<freq[i]<<" ";
+    }
+    cout<<'c'-'a';
 
 }
