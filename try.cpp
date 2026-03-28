@@ -7,10 +7,15 @@ bool isp(string s){
     return true;
 }
 int main() {
-    int freq[26]={0};
-    for(int i=0;i<26;i++){
-        cout<<freq[i]<<" ";
+    // int freq[26]={0};
+    // for(int i=0;i<26;i++){
+    //     cout<<freq[i]<<" ";
+    // }
+    // cout<<'c'-'a';
+    set<int>s={-1,-5,-4,2,0};
+    for(auto it:s){
+        cout<<it<<" ";
     }
-    cout<<'c'-'a';
+    cout<<endl<<*s.begin();
 
 }
