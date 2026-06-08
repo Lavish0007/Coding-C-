@@ -51,11 +51,53 @@ node* deletetail(node* head){
     temp->next=nullptr;
     return head;
 }
+node* deleteatk(node* head , int k){
+    if(head==NULL) return head;
+    node* temp=head;
+    node* prev=NULL;
+    if(k==1){
+        head  = head->next;
+        free(temp);
+        return head;
+    }
+    int count=0;
+    while(temp!=NULL){
+        count++;
+        if(count==k){
+            prev->next=prev->next->next;
+            free(temp);
+            break;
+        }
+        prev=temp;
+        temp=temp->next;
+    }
+    return head;
+}
 
+node* deleteEL(node* head , int k){
+    if(head==NULL) return head;
+    node* temp=head;
+    node* prev=NULL;
+    if(k==head->data){
+        head  = head->next;
+        free(temp);
+        return head;
+    }
+    while(temp!=NULL){
+        if(temp->data==k){
+            prev->next=prev->next->next;
+            free(temp);
+            break;
+        }
+        prev=temp;
+        temp=temp->next;
+    }
+    return head;
+}
 int main(){
     vector<int>arr={902,3,5,8};
     node* head = convertll(arr);
-    head = deletetail(head);
+    head = deleteEL(head,902);
     // cout<<head->data;
     printit(head);
 
