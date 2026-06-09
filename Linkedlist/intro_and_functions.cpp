@@ -94,10 +94,31 @@ node* deleteEL(node* head , int k){
     }
     return head;
 }
+
+node* insertatk(node* head ,int val,int k){
+    if(head==NULL and k==1) return new node(val,head);
+    if(k==1 ) return new node(val,head);
+    node* temp = head;
+    int cnt=0;
+    while(temp){
+        cnt++;
+        if(cnt==k-1){
+            node* x = new node(val,temp->next);
+            temp->next = x;
+            break;
+        }
+        temp=temp->next;
+    }
+    return head;
+}
+
+
 int main(){
     vector<int>arr={902,3,5,8};
     node* head = convertll(arr);
-    head = deleteEL(head,902);
+    // head = deleteEL(head,902);
+    // head = new node(905,head);  //insertion at head
+    head = insertatk(head,50,1);
     // cout<<head->data;
     printit(head);
 
