@@ -106,12 +106,31 @@ node* insertbtail(node* head,int val){
     return head;
 }
 
+node* insertatnth(node* head,int val,int k){
+    if(k==1){
+        return insertbhead(head,val);
+    }
+    node* temp =head;
+    int cnt=0;
+    while(temp->next!=NULL){
+        cnt++;
+        if(cnt==k){
+            break;
+        }
+        temp=temp->next;
+    }
+    if(temp->next==NULL) return insertbtail(head,val);
+    node* prev = temp->back;
+    node * newnode = new node(val,temp,prev);
+    prev->next=temp->back=newnode;
+    return head;
+}
 
 
 int main(){
     vector<int>arr={1,9,2,3,4,5};
     node* head = converttodll(arr);
-    head=insertbtail(head,4789);
+    head=insertatnth(head,4789,6);
     printdll(head);
     return 0;
 }
