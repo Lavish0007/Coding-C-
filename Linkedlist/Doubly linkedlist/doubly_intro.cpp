@@ -87,10 +87,31 @@ node * deleteatpos(node* head,int x ){
 }
 
 
+node* insertbhead(node* head,int val){
+    node* newnode = new node(val,head,nullptr);
+    head->back=newnode;
+    return newnode;
+}
+
+node* insertbtail(node* head,int val){
+    node* temp =head;
+    while(temp->next!=NULL){
+        temp=temp->next;
+    }
+    node * prev = temp->back;
+
+    node* newnode = new node(val,temp,prev);
+    temp->back=newnode;
+    prev->next=newnode;
+    return head;
+}
+
+
+
 int main(){
     vector<int>arr={1,9,2,3,4,5};
     node* head = converttodll(arr);
-    head=deleteatpos(head,4);
+    head=insertbtail(head,4789);
     printdll(head);
     return 0;
 }
